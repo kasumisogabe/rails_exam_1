@@ -6,12 +6,16 @@
   <tr>
     <th>投稿内容</th>
     <th>投稿者</th>
+    <th>タイトル</th>
+    <th>コメント</th>
   </tr>
 
 <% @pictures.each do |picture| %>
   <tr>
     <td><%= picture.image %></td>
     <td><%= picture.user.name %></td>
+    <td><%= picture.title %></td>
+    <td><%= picture.content %></td>
     <td><%= link_to "詳細を確認する", picture_path(picture.id) %></td>
     <td><%= link_to "投稿を編集する", edit_picture_path(picture.id) %></td>
     <td><%= link_to "投稿を削除する", picture_path(picture.id), method: :delete, data: {confirm: "本当に削除していいですか?"} %></td>
