@@ -10,11 +10,11 @@
 
 <% @pictures.each do |picture| %>
   <tr>
-    # <td><%= picture.content %></td> 画像用コード記載
+    <td><%= picture.image %></td>
     <td><%= picture.user.name %></td>
     <td><%= link_to "詳細を確認する", picture_path(picture.id) %></td>
     <td><%= link_to "投稿を編集する", edit_picture_path(picture.id) %></td>
-    <td><%= link_to "投稿を削除する", picture_path(blog.id), method: :delete, data: {confirm: "本当に削除していいですか?"} %></td>
+    <td><%= link_to "投稿を削除する", picture_path(picture.id), method: :delete, data: {confirm: "本当に削除していいですか?"} %></td>
   </tr>
 <% end %>
 </table>

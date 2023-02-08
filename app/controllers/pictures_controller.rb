@@ -24,8 +24,8 @@ class PicturesController < ApplicationController
 
   def show
     set_picture
-    @picture = Blog.find(params[:id])
-    @favorite = current_user.favorites.find_by(picture_id: @picture.id)
+    @picture = Picture.find(params[:id])
+    # @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
   def edit
@@ -57,7 +57,7 @@ class PicturesController < ApplicationController
   private
 
   def picture_params
-    params.require(:picture).permit(:image)
+    params.require(:picture).permit(:image, :image_cache)
   end
 
   def set_picture

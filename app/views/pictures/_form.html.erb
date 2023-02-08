@@ -11,7 +11,10 @@
     </div>
   <% end %>
   
-  # ここに画像アップロード用のコード記載
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
   <%= form.submit %>
 <% end %>
   <%= link_to "投稿一覧画面にもどる", pictures_path %>
